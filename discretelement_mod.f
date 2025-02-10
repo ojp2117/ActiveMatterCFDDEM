@@ -436,11 +436,11 @@
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE :: FC    !(3,PARTICLES)
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE :: TOW   !(3,PARTICLES)
 
-!**************************************qg***************************************************
+!**************************************op***************************************************
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE :: F_contact    !(3,PARTICLES)
 	DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE :: F_drag    !(3,PARTICLES)
 	DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE :: F_LIVE    !(3,PARTICLES)		  
-!**************************************qg***************************************************      
+!**************************************op***************************************************      
 
 !     particle can collide with at most COLLISION_ARRAY_MAX facets simultaneously
       INTEGER :: COLLISION_ARRAY_MAX = 8
