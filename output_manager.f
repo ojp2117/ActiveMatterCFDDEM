@@ -64,10 +64,10 @@ MODULE output_man
    use write_res0_des_mod, only: write_res0_des
    use write_res1_mod, only: write_res1
    use write_spx1_mod, only: write_spx1
-!**************************************qg***************************************************   
+!**************************************op***************************************************   
 	use discretelement, only: F_contact, F_drag, F_LIVE, MAX_PIP
 	use randomno	  	  
-!**************************************qg***************************************************    
+!**************************************op***************************************************    
 
 #ifdef MPI
    use compar, only: mpierr, mpi_comm_world
@@ -87,9 +87,9 @@ CONTAINS
    SUBROUTINE OUTPUT_MANAGER(EXIT_FLAG, FINISHED)
 
       IMPLICIT NONE
-!**************************************qg***************************************************	  
+!**************************************op***************************************************	  
       INTEGER :: PPPPPP	  
-!**************************************qg***************************************************	
+!**************************************op***************************************************	
 ! Dummy Arguments:
 !---------------------------------------------------------------------//
 ! Flag that the the user specified batch time (plus buffer) is met.
@@ -217,14 +217,14 @@ CONTAINS
             IF(CHECK_TIME(MONITOR_NEXT_TIME(LC))) THEN
                MONITOR_NEXT_TIME(LC) = NEXT_TIME(MONITOR_DT(LC))
                CALL WRITE_MONITOR(LC, .false.) ! This call will write the data, including the time-averaged data (if computed above)
-!**************************************qg***************************************************
+!**************************************op***************************************************
                   !CALL NOR_RNO(F_LIVE(:,1), 0.0D0, 0.0D0)
 		  !CALL NOR_RNO(F_LIVE(:,2), 0.0D0, 0.0D0)
 		  !CALL NOR_RNO(F_LIVE(:,3), 0.0D0, 0.0D0)
                   CALL NOR_RNO(F_LIVE(:,1), 0.0D0, 5.0D-7)
                   CALL NOR_RNO(F_LIVE(:,2), 0.0D0, 5.0D-7)
                   CALL NOR_RNO(F_LIVE(:,3), 0.0D0, 5.0D-7)						
-!**************************************qg***************************************************	            
+!**************************************op***************************************************	            
             ENDIF
 
          ENDDO
