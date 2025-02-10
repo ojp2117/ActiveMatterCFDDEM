@@ -33,9 +33,9 @@ CONTAINS
       USE des_thermo
       USE des_thermo_cond, only: DES_Qw_cond
       USE discretelement
- !**************************************qg***************************************************
+ !**************************************op***************************************************
       use discretelement, only: F_contact, F_drag, F_LIVE
- !**************************************qg***************************************************          
+ !**************************************op***************************************************          
       USE functions
       USE funits
       USE geometry
@@ -141,11 +141,11 @@ CONTAINS
 ! Torque
       Allocate(  TOW (MAX_PIP,DIMN) )
 
-!**************************************qg***************************************************
+!**************************************op***************************************************
       Allocate(  F_contact (MAX_PIP,DIMN) )  
       Allocate(  F_drag (MAX_PIP,DIMN) )  
       Allocate(  F_LIVE (MAX_PIP,DIMN) )   
-!**************************************qg***************************************************             
+!**************************************op***************************************************             
 
 ! allocate variable for des grid binning
       allocate(dg_pijk(max_pip)); dg_pijk=0
@@ -579,11 +579,11 @@ CONTAINS
         call logical_grow(ighost_updated,new_size)
         call real_grow2_reverse(FC,new_size)
         call real_grow2_reverse(TOW,new_size)
-!**************************************qg***************************************************
+!**************************************op***************************************************
         call real_grow2_reverse(F_contact,new_size)
         call real_grow2_reverse(F_drag,new_size)
         call real_grow2_reverse(F_LIVE,new_size)
-!**************************************qg***************************************************                
+!**************************************op***************************************************                
         call real_grow(F_GP,new_size)
         call integer_grow2(WALL_COLLISION_FACET_ID,new_size)
         call real_grow3(WALL_COLLISION_PFT,new_size)
