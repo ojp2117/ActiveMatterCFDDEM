@@ -6,11 +6,11 @@
 !       arrays are defined in this module allocate them in usr0.  To turn on the
 !       user defined subroutines (usr0, usr1, and usr2) set keyword CALL_USR to true.
 
-!**************************************qg***************************************************
+!**************************************op***************************************************
             USE GET_STL_DATA_MOD
             use stl_preproc_des
             IMPLICIT NONE
             integer :: is_1_group_id
-!**************************************qg***************************************************            
+!**************************************op***************************************************            
 
       END MODULE usr
