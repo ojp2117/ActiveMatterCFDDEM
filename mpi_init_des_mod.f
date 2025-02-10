@@ -53,9 +53,9 @@
 
       use error_manager
 
-!**************************************qg***************************************************   
+!**************************************op***************************************************   
       use discretelement, only: F_contact, F_drag, F_LIVE, MAX_PIP
-!**************************************qg***************************************************      
+!**************************************op***************************************************      
 
 !-----------------------------------------------
       implicit none
@@ -107,10 +107,10 @@
               iParticlePacketSize = iParticlePacketSize + 3
          IF(DES_EXPLICITLY_COUPLED) THEN
             iParticlePacketSize = iParticlePacketSize + 3
-!**************************************qg***************************************************   
+!**************************************op***************************************************   
             !iParticlePacketSize = iParticlePacketSize + 3
             iParticlePacketSize = iParticlePacketSize + 9
-!**************************************qg***************************************************              
+!**************************************op***************************************************              
             IF(ENERGY_EQ)iParticlePacketSize = iParticlePacketSize + 1
             IF(ANY_SPECIES_EQ)iParticlePacketSize = iParticlePacketSize + 1
          ENDIF
