@@ -87,11 +87,11 @@ CONTAINS
       DOUBLE PRECISION, DIMENSION(3) :: COH_FORCE_PREVIOUS_FACET
       DOUBLE PRECISION :: COHMAG_PREVIOUS_FACET
       DOUBLE PRECISION :: NORMTEST
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ! Wall tangential velocity at contact point
       double precision, dimension(3) :: wall_tang_vel  
       INTEGER :: BC_ID ! BC ID          
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ! Flag to keep only cohesion force with one STL facet
       LOGICAL :: COHESION_WITH_STL_FACET
@@ -104,7 +104,7 @@ CONTAINS
       DES_LOC_DEBUG = .false. ;      DEBUG_DES = .false.
       FOCUS_PARTICLE = -1
 
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !$omp parallel default(none) private(LL,MAG_OVERLAP_T,             &
 !$omp    cell_id,radsq,particle_max,particle_min,tangent,              &
 !$omp    axis,nf,closest_pt,dist,r_lm,distapart,force_coh,distsq,      &
@@ -125,7 +125,7 @@ CONTAINS
 !$omp    van_der_waals,wall_hamaker_constant,wall_vdw_outer_cutoff,    &
 !$omp    wall_vdw_inner_cutoff,asperities,surface_energy)
 !$omp do
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       DO LL = 1, MAX_PIP
 
          IF(LL.EQ.FOCUS_PARTICLE) DEBUG_DES = .TRUE.
@@ -329,7 +329,7 @@ CONTAINS
             DISTMOD = SQRT(MAX_DISTSQ)
             OVERLAP_N = DES_RADIUS(LL) - DISTMOD
 
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ! Input bc_id and output the tangential velocity
 ! Get BC_ID
             bc_id = bc_id_stl_face(nf)            
@@ -355,7 +355,7 @@ CONTAINS
                CALL CFRELVEL_WALL(LL, V_REL_TRANS_NORM,VREL_T,           &
                     NORMAL, DISTMOD)
             endif
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ! Calculate the spring model parameters.
             phaseLL = PIJK(LL,5)
@@ -585,7 +585,7 @@ CONTAINS
 
       END SUBROUTINE CALC_DEM_FORCE_WITH_WALL_STL
 
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !----------------------------------------------------------------------!
 !                                                                      !
 !  Subroutine: CFRELVEL_MOVING_WALL                                    !
@@ -649,7 +649,7 @@ CONTAINS
 
       RETURN
       END SUBROUTINE CFRELVEL_MOVING_WALL                  
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%qg%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%op%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 !----------------------------------------------------------------------!
 !                                                                      !
