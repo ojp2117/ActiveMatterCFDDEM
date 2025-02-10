@@ -23,9 +23,9 @@ MODULE DES_TIME_MARCH
       use desgrid, only: desgrid_pic
       use CHECK_SOLIDS_DEM_MOD, only: update_dtsolid
       use discretelement
-!**************************************qg*************************************************** 
+!**************************************op*************************************************** 
       use discretelement, only: F_contact, F_drag, F_LIVE, MAX_PIP
-!**************************************qg***************************************************             
+!**************************************op***************************************************             
       use drag_gs_des1_mod, only: drag_gs_des1
       use error_manager
       use mass_inflow_dem_mod, only: mass_inflow_dem
@@ -186,7 +186,7 @@ endif
          CALL CALC_FORCE_DEM
 ! Calculate or distribute fluid-particle drag force.
          CALL CALC_DRAG_DES
-!**************************************qg***************************************************
+!**************************************op***************************************************
          !DO II = 1, MAX_PIP
             !DES_USR_VAR(2,II)=F_contact(II,1)
             !DES_USR_VAR(3,II)=F_contact(II,2)
@@ -198,7 +198,7 @@ endif
             !DES_USR_VAR(9,II)=F_LIVE(II,2)
             !DES_USR_VAR(10,II)=F_LIVE(II,3)				  
          !ENDDO		 
-!**************************************qg***************************************************	         
+!**************************************op***************************************************	         
 ! Calculate heat conduction to/from wall
          IF(ENERGY_EQ)CALL CALC_DEM_THERMO_WITH_WALL_STL
 
