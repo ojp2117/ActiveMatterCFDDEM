@@ -723,10 +723,10 @@ CONTAINS
 
 ! Store the smalled calculated collision time scale. This value is used
 ! in time-marching the DEM solids.
-!*************************qg**************************************
+!*************************op**************************************
 !      DTSOLID = TCOLL/DTSOLID_FACTOR
       DTSOLID = 1.0e-06
-!*************************qg**************************************
+!*************************op**************************************
 
 
       WRITE(ERR_MSG,1100) TIME, DTSOLID
@@ -998,10 +998,10 @@ CONTAINS
 
 ! Store the smalled calculated collision time scale. This value is used
 ! in time-marching the DEM solids.
-!*************************qg**************************************
+!*************************op**************************************
 !      DTSOLID = TCOLL/DTSOLID_FACTOR
       DTSOLID = 1.0e-06
-!*************************qg**************************************
+!*************************op**************************************
 
       RETURN
 
