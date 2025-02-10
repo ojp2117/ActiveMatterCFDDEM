@@ -220,11 +220,11 @@ SUBROUTINE SWAP_PARTICLE_DATA(i,j)
       do d=1,DIMN
          call DES_SWAPVALUES(FC(i,d),FC(j,d))
          call DES_SWAPVALUES(TOW(i,d),TOW(j,d))
-!**************************************qg***************************************************		 
+!**************************************op***************************************************		 
          call DES_SWAPVALUES(F_contact(i,d),F_contact(j,d))
          call DES_SWAPVALUES(F_drag(i,d),F_drag(j,d))
          call DES_SWAPVALUES(F_LIVE(i,d),F_LIVE(j,d))	 
-!**************************************qg***************************************************         
+!**************************************op***************************************************         
       enddo
 
      ! Collision data
